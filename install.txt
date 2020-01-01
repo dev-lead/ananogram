@@ -1,0 +1,43 @@
+Required:
+	PHP >= 7.2
+		php-intl
+		php-json
+		php-mbstring
+		php-mysqlnd (bundled with PHP >= 5.3.0)
+		php-xml
+		php_curl
+
+Scripts:
+	composer require codeigniter4/framework @rc --update-no-dev
+	#NOTE: Review app/Config for changes after any future 'composer update' command
+
+Server:
+	Apache >= 2.46
+		ananogram.conf
+			<VirtualHost *:80>
+				ServerName www.ananogram.local
+				#Use your own folder path here
+				DocumentRoot "/var/www/html/clients/Development/ananogram/ananogram.local/public"
+				ServerAlias ananogram.local
+			</VirtualHost>
+			<VirtualHost *:443>
+				#Use your own ssh key pairs here
+				SSLEngine on
+				SSLCertificateFile /etc/pki/tls/certs/ca.crt
+				SSLCertificateKeyFile /etc/pki/tls/private/ca.key
+
+				ServerName www.ananogram.local
+				ServerAlias ananogram.local
+				#Use your own folder path here
+				DocumentRoot "/var/www/html/clients/Development/ananogram/ananogram.local/public"
+			</VirtualHost>
+
+Database:
+	MySQL >= 5.1
+		host: localhost
+		db: anano_systems
+		user: ananogram6854
+		pass: ax6*P4d5)&s4
+		
+		#NOTE: User account and permissions set in schema.sql
+		
